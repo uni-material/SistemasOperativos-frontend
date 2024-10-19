@@ -1,0 +1,24 @@
+<mat-table [dataSource]="products" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{product.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{product.name}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef> price </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{product.price}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="stock">
+    <mat-header-cell *matHeaderCellDef> stock </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{product.stock}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['id', 'name', 'price', 'stock']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['id', 'name', 'price', 'stock'];"></mat-row>
+</mat-table>
